@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://wfohv6y57sxo"]
+
+[ext_resource type="Texture2D" uid="uid://b3jr0e8l3vao5" path="res://art/Free 1 Bit Forest/PNG/Layer0.png" id="1_54a2j"]
+[ext_resource type="Texture2D" uid="uid://dgb1y6040tk4p" path="res://art/Free 1 Bit Forest/PNG/Layer01.png" id="2_2sh0o"]
+[ext_resource type="Texture2D" uid="uid://b61yjxv6bu686" path="res://art/Free 1 Bit Forest/PNG/Layer02.png" id="3_7wk7k"]
+[ext_resource type="Texture2D" uid="uid://brdkcyxv6ekm2" path="res://art/Free 1 Bit Forest/PNG/Layer03.png" id="4_dtt0w"]
+
+[node name="Parallax" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Base" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(2, 2)
+motion_mirroring = Vector2(300, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Base"]
+modulate = Color(1, 0.819608, 0.819608, 1)
+texture = ExtResource("1_54a2j")
+centered = false
+
+[node name="Gaps" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(2, 2)
+motion_mirroring = Vector2(300, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Gaps"]
+texture = ExtResource("2_2sh0o")
+centered = false
+
+[node name="Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(3, 3)
+motion_scale = Vector2(2, 1)
+motion_mirroring = Vector2(300, 170)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees"]
+texture = ExtResource("3_7wk7k")
+centered = false
+
+[node name="Trees 2" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(2, 2)
+motion_scale = Vector2(2, 1)
+motion_mirroring = Vector2(300, 170)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees 2"]
+texture = ExtResource("4_dtt0w")
+centered = false
