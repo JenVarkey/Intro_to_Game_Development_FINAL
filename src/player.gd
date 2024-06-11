@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 400.0
 const JUMP_VELOCITY = -450.0
 var lives = 3
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -19,7 +19,6 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
-		
 		velocity.y = JUMP_VELOCITY
 		
 		
@@ -39,8 +38,15 @@ func _physics_process(delta):
 	
 	if velocity.y != 0:
 		animatedSprite.play("jump")
-	print(position.x)
+		
 	move_and_slide()
 
-func on_body_entered(body):
-	pass
+
+
+func _on_area_2d_area_entered(area):
+	var num = $Counter.text.to_int()
+	num+=1
+	$Counter.text = str(num)
+		
+	var new_scene = preload("res://scenes/interstitial_cutscene.tscn")
+	get_tree().change_scene_to_packed(new_scene)
