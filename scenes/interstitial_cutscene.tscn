@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://chuguuxb4lyiy"]
 
-[ext_resource type="Script" path="res://src/Interstitial Cutscene.gd" id="1_ml2qg"]
+[ext_resource type="Script" path="res://scripts/Interstitial Cutscene.gd" id="1_ml2qg"]
 [ext_resource type="Texture2D" uid="uid://c3mcsjpcevr8v" path="res://art/Cutscene artwork/gry.png" id="2_xpsd8"]
 
 [node name="Interstitial Cutscene" type="Node2D"]
@@ -13,6 +13,7 @@ offset_right = 688.0
 offset_bottom = 440.0
 
 [node name="Counter" type="Label" parent="."]
+visible = false
 offset_left = 64.0
 offset_top = 16.0
 offset_right = 104.0
@@ -21,22 +22,22 @@ text = "1"
 
 [node name="NextScene" type="Button" parent="."]
 offset_left = 328.0
-offset_top = 248.0
+offset_top = 264.0
 offset_right = 552.0
-offset_bottom = 288.0
+offset_bottom = 304.0
 text = "Next Level"
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 24.0
-offset_top = 248.0
-offset_right = 296.0
-offset_bottom = 288.0
+offset_left = 16.0
+offset_top = 264.0
+offset_right = 272.0
+offset_bottom = 304.0
 text = "Exit
 "
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(304, 120)
-scale = Vector2(0.068, 0.0478572)
+position = Vector2(292, 134.125)
+scale = Vector2(0.074, 0.0559286)
 texture = ExtResource("2_xpsd8")
 
 [connection signal="pressed" from="NextScene" to="." method="_on_next_scene_pressed"]

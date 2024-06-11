@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://c761la8cffkim"]
+
+[ext_resource type="Script" path="res://scripts/Textbox.gd" id="1_3fknq"]
+[ext_resource type="FontFile" uid="uid://c8ooulcyi7n2u" path="res://Jersey15-Regular.ttf" id="1_vd5hb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vemeb"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0ddb"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bweou"]
+font = ExtResource("1_vd5hb")
+font_size = 30
+
+[node name="textbox" type="CanvasLayer"]
+script = ExtResource("1_3fknq")
+
+[node name="TxtContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -92.0
+offset_right = -32.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="TxtContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vemeb")
+
+[node name="MarginContainer" type="MarginContainer" parent="TxtContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="TxtContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0ddb")
+
+[node name="Container" type="Container" parent="TxtContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TxtContainer/MarginContainer/Container"]
+texture_filter = 1
+layout_mode = 2
+text = "Hey, its so amazing"
+label_settings = SubResource("LabelSettings_bweou")

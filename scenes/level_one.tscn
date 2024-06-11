@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://duo3as67hvbr1"]
+[gd_scene load_steps=11 format=3 uid="uid://duo3as67hvbr1"]
 
-[ext_resource type="Script" path="res://src/level_one.gd" id="1_on4on"]
-[ext_resource type="Texture2D" uid="uid://c3t4vgwjuur7j" path="res://art/Free 1 Bit Forest/PNG/Tileset.png" id="2_h61qm"]
-[ext_resource type="Texture2D" uid="uid://bvxw5mxy8sxcy" path="res://art/Free 1 Bit Forest/PNG/Trees_and_etc.png" id="3_ma653"]
-[ext_resource type="PackedScene" uid="uid://wfohv6y57sxo" path="res://scenes/parallax.tscn" id="4_hq80s"]
+[ext_resource type="Script" path="res://scripts/level_one.gd" id="1_on4on"]
+[ext_resource type="Texture2D" uid="uid://c3t4vgwjuur7j" path="res://art/Free 1 Bit Forest/PNG/Tileset.png" id="2_g3210"]
+[ext_resource type="Texture2D" uid="uid://bvxw5mxy8sxcy" path="res://art/Free 1 Bit Forest/PNG/Trees_and_etc.png" id="3_rj7ud"]
+[ext_resource type="PackedScene" uid="uid://877bm88g0xip" path="res://scenes/parallax.tscn" id="4_hq80s"]
 [ext_resource type="PackedScene" uid="uid://ble6wolg8wl60" path="res://scenes/player.tscn" id="5_eonda"]
+[ext_resource type="Texture2D" uid="uid://bxs5vbxykbroo" path="res://art/Gems/Untitled_Artwork 9.png" id="6_6doog"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hafh8"]
-texture = ExtResource("2_h61qm")
+texture = ExtResource("2_g3210")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -198,7 +199,7 @@ texture = ExtResource("2_h61qm")
 8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kgu5c"]
-texture = ExtResource("3_ma653")
+texture = ExtResource("3_rj7ud")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -346,12 +347,15 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_hafh8")
 sources/4 = SubResource("TileSetAtlasSource_kgu5c")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hn1o"]
+size = Vector2(107.402, 107.4)
+
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_on4on")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
-position = Vector2(2.08165e-12, 100)
+position = Vector2(2.08165e-12, 300)
 tile_set = SubResource("TileSet_sk7o7")
 format = 2
 layer_0/tile_data = PackedInt32Array(458754, 65540, 2, 524290, 65540, 3, 589826, 65540, 4, 655362, 65540, 5, 720898, 65540, 5, 458755, 131076, 2, 524291, 131076, 3, 589827, 131076, 4, 655363, 131076, 5, 720899, 131076, 6, 786435, 131076, 6, 393218, 65540, 1, 393219, 131076, 1, 393228, 65540, 1, 458764, 65540, 2, 524300, 65540, 3, 589836, 65540, 4, 655372, 65540, 5, 393229, 131076, 1, 458765, 131076, 2, 524301, 131076, 3, 589837, 131076, 4, 655373, 131076, 5, 720909, 131076, 6, 655365, 851972, 2, 655366, 917508, 2, 720901, 720900, 6, 720902, 720900, 6, 589842, 917508, 5, 655378, 917508, 6, 589843, 983044, 5, 655379, 983044, 6, 589831, 917508, 5, 655367, 917508, 6, 589832, 983044, 5, 655368, 983044, 6, 589867, 917508, 5, 655403, 917508, 6, 589868, 983044, 5, 655404, 983044, 6, 589877, 917508, 5, 655413, 917508, 6, 589878, 983044, 5, 655414, 983044, 6, 327732, 655364, 5, 393256, 196612, 5, 458792, 196612, 6, 524328, 196612, 5, 589864, 196612, 6, 655400, 196612, 6, 720936, 196612, 6, 393257, 262148, 5, 458793, 262148, 4, 524329, 262148, 5, 589865, 262148, 5, 655401, 262148, 5, 40, 196612, 1, 65576, 196612, 2, 131112, 196612, 3, 196648, 196612, 4, 262184, 196612, 5, 327720, 196612, 6, 41, 262148, 1, 65577, 262148, 2, 131113, 262148, 3, 196649, 262148, 4, 262185, 262148, 5, 327721, 262148, 4)
@@ -361,7 +365,7 @@ layer_1/tile_data = PackedInt32Array(720896, 2, 0, 720897, 65538, 0, 720898, 655
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("5_eonda")]
-position = Vector2(4216, 248)
+position = Vector2(4192, 448)
 
 [node name="PauseMenu" type="VBoxContainer" parent="."]
 texture_filter = 1
@@ -384,11 +388,27 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Counter" type="Label" parent="."]
+visible = false
 offset_left = 64.0
 offset_top = 16.0
 offset_right = 104.0
 offset_bottom = 39.0
 text = "1"
+
+[node name="GemArea" type="Area2D" parent="."]
+position = Vector2(4400, 464)
+scale = Vector2(0.312494, 0.3125)
+
+[node name="GemSquare" type="CollisionShape2D" parent="GemArea"]
+position = Vector2(-2.5, -2.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6hn1o")
+
+[node name="Red Gem" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4400, 464)
+scale = Vector2(0.312494, 0.3125)
+texture = ExtResource("6_6doog")
 
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Restart" to="." method="_on_restart_pressed"]

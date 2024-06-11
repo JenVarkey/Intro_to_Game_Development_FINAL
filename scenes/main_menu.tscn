@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsi548yjdhrxs"]
+
+[ext_resource type="Script" path="res://scripts/Main Menu.gd" id="1_6wx71"]
+[ext_resource type="FontFile" uid="uid://c8ooulcyi7n2u" path="res://Jersey15-Regular.ttf" id="2_riv80"]
+[ext_resource type="Texture2D" uid="uid://c3mcsjpcevr8v" path="res://art/Cutscene artwork/gry.png" id="4_cboom"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2a4is"]
+line_spacing = 5.0
+font = ExtResource("2_riv80")
+font_size = 50
+font_color = Color(0.658824, 0.658824, 0.658824, 1)
+outline_size = 4
+outline_color = Color(0.258824, 0.258824, 0.258824, 1)
+shadow_size = 2
+shadow_color = Color(0.560784, 0.560784, 0.560784, 0.494118)
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rks4q"]
+font = ExtResource("2_riv80")
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_6wx71")
+
+[node name="BackgroundPanel" type="ColorRect" parent="."]
+offset_left = -56.0
+offset_top = -32.0
+offset_right = 656.0
+offset_bottom = 384.0
+color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 184.0
+offset_right = 400.0
+offset_bottom = 51.0
+text = "Color Quest"
+label_settings = SubResource("LabelSettings_2a4is")
+
+[node name="Start Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 168.0
+offset_top = 296.0
+offset_right = 224.0
+offset_bottom = 327.0
+
+[node name="Label" type="Label" parent="Start Button"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 12.0
+offset_right = 55.0
+offset_bottom = 35.0
+text = "Start"
+label_settings = SubResource("LabelSettings_rks4q")
+
+[node name="Exit Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 368.0
+offset_top = 296.0
+offset_right = 424.0
+offset_bottom = 328.0
+text = "Exit
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(288, 172)
+scale = Vector2(0.08, 0.0617143)
+texture = ExtResource("4_cboom")
+
+[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
